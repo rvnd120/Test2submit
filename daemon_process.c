@@ -23,7 +23,7 @@
 #include <time.h>
 #include <ctype.h>
 #include<sys/socket.h>
-#include<arpa/inet.h>         
+#include<arpa/inet.h>     /*inet_addr() fnction to convert IPv4 internet address to binary data in network byte order */ 
 #include<netinet/in.h>
 
 /*File pointer for log file of connection*/
