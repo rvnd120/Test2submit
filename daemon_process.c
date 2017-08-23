@@ -12,7 +12,7 @@
 #define FPIDPATH "/var/run/devil.pid"
 #define RESULTFPATH "/home/aravind/result.txt"
 
-#define DELIM "."
+#define DELIM "."          /* To parse through the IP address string to check whether it's in valid IPv4 format*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
