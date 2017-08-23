@@ -20,18 +20,12 @@
 #include <signal.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <syslog.h>
 #include <string.h>
 #include <time.h>
 #include <ctype.h>
 #include<sys/socket.h>
-#include<arpa/inet.h> //inet_addr
+#include<arpa/inet.h>         
 #include<netinet/in.h>
-#define DELIM "."
-#define FILEPATH "/home/aravind/config6.txt"
-#define FPIDPATH "/var/run/devil.pid"
-#define RESULTFPATH "/home/aravind/result.txt"
-
 
 /*File pointer for log file of connection*/
 FILE *fresult;
