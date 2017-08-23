@@ -8,7 +8,6 @@
   
 
 /*File path definitions*/
-
 #define FILEPATH "/home/aravind/config6.txt"
 #define FPIDPATH "/var/run/devil.pid"
 #define RESULTFPATH "/home/aravind/result.txt"
