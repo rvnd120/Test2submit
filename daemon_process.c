@@ -9,7 +9,7 @@
 
 /*File path definitions*/
 #define FILEPATH "/home/aravind/config6.txt"
-#define FPIDPATH "/var/run/devil.pid"
+#define FPIDPATH "/var/run/daemon_process.pid"
 #define RESULTFPATH "/home/aravind/result.txt"
 
 #define DELIM "."          /* To parse through the IP address string to check whether it's in valid IPv4 format*/
