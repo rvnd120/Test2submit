@@ -554,7 +554,7 @@ int main(int argc, char *argv[])
 		ping(interval,ipaddress,command);
 
 	}	        
-	return EXIT_SUCCESS;
+	return 0;
 }
 
 
