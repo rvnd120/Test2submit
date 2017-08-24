@@ -145,37 +145,41 @@ void remove_newline(char string[])
 }  
 
 /*Daemon Function*/
-void skeleton_daemon()
+void newdaemon()
 {
 	pid_t pid;
 
 	/* Fork off the parent process */
 	pid = fork();
 
-	/* An error occurred */
+	/* To check for error */
 	if (pid < 0)
+	{
 		exit(EXIT_FAILURE);
-
-	/* Success: Let the parent terminate */
+	}
+	/* Let the parent terminate */
 	if (pid > 0)
-
+	{
 		exit(EXIT_SUCCESS);
-
-	/* On success: The child process becomes session leader */
+	}
+	/* On success te child process becomes session leader */
 	if (setsid() < 0)
+	{
 		exit(EXIT_FAILURE);
-
+	}
 	/* Fork off for the second time*/
 	pid = fork();
 
-	/* An error occurred */
+	/* To check for error */
 	if (pid < 0)
+	{
 		exit(EXIT_FAILURE);
-
-	/* Success: Let the parent terminate */
+	}
+	/*Let the parent terminate */
 	if (pid > 0)
+	{
 		exit(EXIT_SUCCESS);
-
+	}
 	/*Change the file mode mask*/
 	umask(0);
 }
@@ -236,8 +240,6 @@ void ping(int interval, char * ipaddress, char * command)
 			/*To properly shutdown the exixting connection and closing the socket file descriptor*/
 			shutdown(socket_desc,2);
 
-			printf("check %d\n",check);
-
 		}
 
 		else if(check < 0)
@@ -275,7 +277,7 @@ void startfn(void)
 		printf("starting the daemon\n");
 
 		/*Daemon Started*/
-		skeleton_daemon();
+		newdaemon();
 
 		/*Create PID file and write process ID for further operations like stop, restart, status check*/
 		fpid=fopen(pidfile,"w");
@@ -372,7 +374,7 @@ void restartfn(void)
 
 		/*Daemon Restart*/
 		printf("Restarting the daemon\n");
-		skeleton_daemon();
+		newdaemon();
 
 		/*Create a new PID file again and write process ID for further operations like stop, restart, status check*/
 		fpid=fopen(pidfile,"w");
