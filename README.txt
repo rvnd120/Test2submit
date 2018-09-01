@@ -4,8 +4,6 @@ Compile and run the code as root user. Because I am reading and writing files in
 
 2. Command for Compilation: 
 
- sudo cc -Wall -o daemon_process daemon_process.c
-
 If you run the code directly as root user then command for compilation is,
 
  cc -Wall -o daemon_process daemon_process.c  
